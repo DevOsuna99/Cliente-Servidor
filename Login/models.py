@@ -1,7 +1,7 @@
 from django.db import models
-from django.util import timezone
+from django.utils import timezone
 
-class Exmaple2(models.Model):
+class Example2(models.Model):
     name = models.CharField(max_length=254, null=False)
     year = models.IntegerField(null=False)
     delete = models.BooleanField(default=False)
