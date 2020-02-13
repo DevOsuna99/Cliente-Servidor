@@ -47,6 +47,7 @@ class Estado(models.Model):
 
 class Ciudad(models.Model):
     ciudad = models.CharField(max_length=254, null=False)
+    estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
     delete = models.BooleanField(default=False)
     create = models.DateTimeField(default=timezone.now)
 
@@ -61,11 +62,11 @@ class Profile(models.Model):
     apellidoPaterno = models.CharField(max_length=254, null=False)
     apellidoMaterno = models.CharField(max_length=254, null=False)
     edad = models.IntegerField(null=False)
-    ciudad = models.CharField(max_length=254, null=False)
-    genero = models.CharField(max_length=254, null=False)
-    ocupacion = models.CharField(max_length=254, null=False)
-    estado = models.CharField(max_length=254, null=False)
-    estadoCivil = models.CharField(max_length=254, null=False)
+    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    ocupacion = models.ForeignKey(Ocupacion, on_delete=models.CASCADE)
+    estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
+    estadoCivil = models.ForeignKey(EstadoCivil, on_delete=models.CASCADE)
     delete = models.BooleanField(default=False)
     create = models.DateTimeField(default=timezone.now)
 

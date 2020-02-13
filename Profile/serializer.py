@@ -6,4 +6,6 @@ from Profile.models import Profile
 class ProfileSerializers(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['nombre', 'apellidoPaterno', 'apellidoMaterno', 'edad']
+        # fields = ['nombre', 'apellidoPaterno', 'apellidoMaterno', 'edad']
+        fields = ('__all__')
+
