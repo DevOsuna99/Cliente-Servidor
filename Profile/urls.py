@@ -7,5 +7,10 @@ from Profile import views
 
 urlpatterns = [
     re_path(r'profiles_list/$', views.ProfileList.as_view()),
+    re_path(r'profile_estadocivil_list/$', views.EstadoCivilList.as_view()),
+    re_path(r'profile_ocupacion_list/$', views.OcupacionList.as_view()),
+    re_path(r'profile_genero_list/$', views.GeneroList.as_view()),
+    re_path(r'profile_ciudad_list/$', views.CiudadList.as_view()),
+    re_path(r'profile_estado_list/$', views.EstadoList.as_view()),
     #Hola soy cesar
 ]
